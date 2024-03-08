@@ -7,6 +7,7 @@ html {
 body {
     font-size: 1.6rem;
     margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 main {
@@ -14,37 +15,117 @@ main {
     overflow: hidden;
 }
 
-.title{
-    font-family: ;
-    color:#FF7F50;
+.title {
+    text-align: center; 
+    margin-bottom: 20px;
+    color: #FF7F50;
+    text-shadow: -1px -1px 0 #000,  
+    1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000; 
+    padding-top: 4rem;
+}
+
+.title h1 {
+    margin: 0; 
 }
 
 .background-image {
+    background-image: url('./assets/background.jpg'); 
     background-size: cover;
     background-position: center;
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
-    height:100vh;
+    height: 100vh;
     z-index: -1;
 }
 
 .flex-item {
-    overflow-x: auto;
+    overflow-x: auto; 
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-    padding: 20px;
-    white-space: nowrap;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    white-space: nowrap; 
 }
 
 .grid-item {
-    display: inline-block;
+    display: grid;
+    position: relative;
+    gap: 2rem;
+    overflow-x:auto;
 }
 
 .grid-item img {
-    max-width: 100%;
-    height: auto;
+    max-height: 100%;
+    width: 70rem; 
+    object-fit: cover; 
+}
+
+.image-container {
+    position: relative; 
+    cursor: pointer;
+    overflow-x: auto;
+}
+
+.image-text {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 80rem;
+    text-align: center; 
+    box-sizing: border-box; 
+    padding: 1rem;
+    padding-right: 10rem;
+    color: #FF7F50;
+    font-size: x-large;
+    text-shadow: -1px -1px 0 #000,  
+    1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+.image-container:hover .image-text {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 767px) {
+    .grid-item {
+        display: grid; 
+        gap: 2rem; 
+    }
+    .grid-container {
+        flex-direction: column; 
+    }
+    .image-container img {
+        width: 100vw;
+    }
+    .image-text {
+        opacity: 1; 
+        width: 100vw;
+        padding-bottom: 2rem;
+        padding-right:1rem;
+        font-size: small;
+        text-align: center; 
+    }
+}
+
+.gradient-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10%; 
+    background: linear-gradient(to top, rgba(255, 127, 80, 0.5), transparent); 
+    z-index: 3; 
 }
