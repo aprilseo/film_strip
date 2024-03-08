@@ -1,0 +1,50 @@
+html {
+    margin: 0;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+main {
+    width: 100vw;
+    overflow: hidden;
+}
+
+.title{
+    font-family: ;
+    color:#FF7F50;
+}
+
+.background-image {
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    width: 100vw;
+    height:100vh;
+    z-index: -1;
+}
+
+.flex-item {
+    overflow-x: auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    padding: 20px;
+    white-space: nowrap;
+}
+
+.grid-item {
+    display: inline-block;
+}
+
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+}
